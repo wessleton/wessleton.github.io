@@ -90,11 +90,7 @@ function compare() {
     }
 }
 
-function humanToggle(event) {
-    if (event.key != ' ') {
-        return
-    }
-
+function humanToggle() {
     humanActive = !humanActive
     if (humanActive) {
         human.classList.add('active')
@@ -182,4 +178,9 @@ cardsLeft.textContent = 'Cards left: ' + humanDeck.length
 let humanActive = false
 let computerActive = false
 
-window.addEventListener('keydown', humanToggle)
+human.addEventListener('click', humanToggle)
+window.addEventListener('keydown', function(event) {
+    if (event.key == ' ') {
+        humanToggle()
+    }
+})
