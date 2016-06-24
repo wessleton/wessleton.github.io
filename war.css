@@ -1,0 +1,114 @@
+@keyframes won {
+    0% {
+       top: calc(50% - 175px);
+       transform: rotate(0deg); 
+    }
+    33% {
+        transform: rotate(5deg);
+    }
+    50% {
+        top: calc(50% - 200px);
+    }
+    67% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        top: calc(50% - 175px);
+    }
+}
+
+body {
+    margin: 0;
+    background-color: #12A07B;
+    font-family: 'Open Sans', sans-serif;
+}
+
+span#cards-left {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    color:white;
+    font-size: 75px;
+}
+
+span#compare {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    color: white;
+    font-size: 60px;
+    font-weight: 900;
+
+}
+
+div {
+    position: absolute;
+    top: calc(50% - 175px);
+    width: 200px;
+    height: 250px;
+    padding: 50px 25px;
+    font-weight: 900px;
+    font-size: 85px;
+    line-height: 225px;
+    text-align: center;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.65);
+    border-radius: 12px;
+    background-color: white;
+}
+
+div.war {
+    top: 25px;
+    width: 40px;
+    height: 50px;
+    padding: 10px 5px;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 50px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.625);
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.25s ease, top 0.25s ease, transform 0.25s ease-in;
+}
+
+div.war.shown {
+    top: 50px;
+    opacity: 1;
+}
+
+div.war.human-won {
+    transform: translateX(-150px);
+}
+
+div.war.computer-won {
+    transform: translateX(150px);
+}
+
+div.war.human {
+    left: calc(50% - 60px);
+}
+
+div.war.computer {
+    right: calc(50% - 50px);
+}
+
+div.won {
+    animation: won 0.5s ease infinite;
+}
+
+div#human {
+    left: 25px;
+    transition: left 0.25s ease;
+}
+
+div#human.active {
+    left: calc(50% - 300px);
+}
+
+div#computer {
+    right: 25px;
+    transition: right 0.25s ease;
+}
+
+div#computer.active {
+    right: calc(50% - 300px);
+}
